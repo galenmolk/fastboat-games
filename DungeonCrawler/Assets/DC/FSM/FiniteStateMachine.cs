@@ -10,7 +10,7 @@ namespace DC.FSM
         {
             currentState?.Exit();
             currentState = state;
-            currentState.Enter(this);
+            currentState.Enter();
         }
         
         private void Update()

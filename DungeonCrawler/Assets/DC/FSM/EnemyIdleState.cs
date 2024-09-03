@@ -1,20 +1,19 @@
 namespace DC.FSM
 {
-    public class EnemyIdleState : State
+    public class EnemyIdleState : EnemyBaseState
     {
-        public override void Enter(FiniteStateMachine stateMachine)
+        protected override string Name => "Idle";
+
+        public EnemyIdleState(EnemyStateMachine enemyStateMachine) : base(enemyStateMachine)
         {
-            throw new System.NotImplementedException();
+        }
+        
+        public override void Enter()
+        {
         }
 
-        public override void Tick()
-        {
-            throw new System.NotImplementedException();
-        }
+        public override void Tick() { }
 
-        public override void Exit()
-        {
-            throw new System.NotImplementedException();
-        }
+        public override void Exit() { }
     }
 }
