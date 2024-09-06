@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
@@ -8,14 +10,15 @@ namespace DC.Enemies
         [Range(1f, 10f)] public float screenSpaceSize = 5f;
         public Color color = Color.white;
 
+        public List<PatrolPathNode> route { get; private set; }
+        
         private void OnValidate()
         {
-            Transform[] children = GetComponentsInChildren<Transform>();
-            foreach (var c in children)
+            foreach (Transform child in transform)
             {
-                if (!c.GetComponent<PatrolPathNode>())
+                if (!child.GetComponent<PatrolPathNode>())
                 {
-                    c.gameObject.AddComponent<PatrolPathNode>().patrolPath = this;
+                    child.gameObject.AddComponent<PatrolPathNode>().patrolPath = this;
                 }
             }
         }
@@ -24,10 +27,27 @@ namespace DC.Enemies
         {
             for (int i = 0; i < transform.childCount - 1; i++)
             {
-                var c1 = transform.GetChild(i);
-                var c2 = transform.GetChild(i + 1);
+                Transform c1 = transform.GetChild(i);
+                Transform c2 = transform.GetChild(i + 1);
                 Handles.color = color;
                 Handles.DrawDottedLine(c1.position, c2.position, screenSpaceSize);
+            }
+        }
+
+        private void Awake()
+        {
+            route = new List<PatrolPathNode>();
+            foreach (Transform child in transform)
+            {
+                PatrolPathNode node = child.GetComponent<PatrolPathNode>();
+                if (!node)
+                {
+                    Debug.LogError("Missing PatrolPathNode");
+                }
+                else
+                {
+                    route.Add(node);
+                }
             }
         }
     }
