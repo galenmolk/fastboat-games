@@ -2,11 +2,11 @@ namespace DC.FSM
 {
     public abstract class EnemyBaseState : State
     {
-        protected EnemyStateMachine enemyStateMachine;
+        protected EnemyStateMachine fsm;
 
-        protected EnemyBaseState(EnemyStateMachine enemyStateMachine)
+        protected EnemyBaseState(EnemyStateMachine fsm)
         {
-            this.enemyStateMachine = enemyStateMachine;
+            this.fsm = fsm;
         }
     }
 }

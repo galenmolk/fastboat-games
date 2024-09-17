@@ -4,7 +4,7 @@ namespace DC.FSM
     {
         protected override string Name => "Chase";
         
-        public EnemyChaseState(EnemyStateMachine enemyStateMachine) : base(enemyStateMachine)
+        public EnemyChaseState(EnemyStateMachine fsm) : base(fsm)
         {
         }
 

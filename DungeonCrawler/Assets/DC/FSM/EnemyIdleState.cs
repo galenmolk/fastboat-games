@@ -4,7 +4,7 @@ namespace DC.FSM
     {
         protected override string Name => "Idle";
 
-        public EnemyIdleState(EnemyStateMachine enemyStateMachine) : base(enemyStateMachine)
+        public EnemyIdleState(EnemyStateMachine fsm) : base(fsm)
         {
         }
         

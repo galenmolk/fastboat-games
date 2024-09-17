@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -10,7 +9,13 @@ namespace DC.Enemies
         [Range(1f, 10f)] public float screenSpaceSize = 5f;
         public Color color = Color.white;
 
-        public List<PatrolPathNode> route { get; private set; }
+        private List<PatrolPathNode> nodes { get; set; }
+
+        public PatrolPathNode startNode => nodes[0];
+
+        public PatrolPathNode this[int i] => nodes[i];
+
+        public int NodeCount => nodes.Count;
         
         private void OnValidate()
         {
@@ -36,7 +41,7 @@ namespace DC.Enemies
 
         private void Awake()
         {
-            route = new List<PatrolPathNode>();
+            nodes = new List<PatrolPathNode>();
             foreach (Transform child in transform)
             {
                 PatrolPathNode node = child.GetComponent<PatrolPathNode>();
@@ -46,7 +51,7 @@ namespace DC.Enemies
                 }
                 else
                 {
-                    route.Add(node);
+                    nodes.Add(node);
                 }
             }
         }

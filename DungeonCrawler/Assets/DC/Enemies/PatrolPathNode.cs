@@ -5,7 +5,7 @@ namespace DC.Enemies
 {
      public class PatrolPathNode : MonoBehaviour
      {
-          public Vector3 Pos => transform.position;
+          public Vector2 position => transform.position;
           public PatrolPath patrolPath;
           public float pauseDuration = 1f;
           

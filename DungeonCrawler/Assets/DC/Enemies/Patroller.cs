@@ -20,7 +20,7 @@ namespace DC.Enemies
         
         private bool isMovingForward = true;
         private List<PatrolPathNode> route;
-    
+        
         private PatrolPathNode targetPoint => route[targetPointIndex];
     
         private float timeAtPoint;
@@ -36,7 +36,7 @@ namespace DC.Enemies
             }
             
             rb = GetComponent<Rigidbody2D>();
-            transform.position = route[0].Pos;
+            transform.position = route[0].position;
             targetPointIndex = 1;
         }
 
@@ -49,14 +49,14 @@ namespace DC.Enemies
             
             var currentPosition = transform.position;
 
-            var distance = Vector2.Distance(currentPosition, targetPoint.Pos);
+            var distance = Vector2.Distance(currentPosition, targetPoint.position);
             if (distance <= slowingDistance)
             {
                 currentVelocity = Vector2.MoveTowards(currentVelocity, Vector2.zero, deceleration * Time.deltaTime);
             }
             else
             {
-                var direction = (targetPoint.Pos - transform.position).normalized;
+                var direction = (targetPoint.position - (Vector2)transform.position).normalized;
                 currentVelocity = Vector2.MoveTowards(currentVelocity, direction * speed, acceleration * Time.deltaTime);
             }
         
