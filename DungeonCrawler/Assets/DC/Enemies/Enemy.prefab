@@ -46,10 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b7e2658a7b045ffad2f87c22f9d2031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slowingDistance: 1
-  acceleration: 50
-  deceleration: 30
-  speed: 4
+  slowingDistance: 0.5
+  acceleration: 15
+  deceleration: 5
+  speed: 2.5
   stoppingSpeedThreshold: 0.1
   patrolPath: {fileID: 0}
 --- !u!50 &6532622677911789429

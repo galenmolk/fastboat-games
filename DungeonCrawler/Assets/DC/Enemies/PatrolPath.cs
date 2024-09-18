@@ -16,17 +16,6 @@ namespace DC.Enemies
         public PatrolPathNode this[int i] => nodes[i];
 
         public int NodeCount => nodes.Count;
-        
-        private void OnValidate()
-        {
-            foreach (Transform child in transform)
-            {
-                if (!child.GetComponent<PatrolPathNode>())
-                {
-                    child.gameObject.AddComponent<PatrolPathNode>().patrolPath = this;
-                }
-            }
-        }
 
         public void OnDrawGizmosSelected()
         {

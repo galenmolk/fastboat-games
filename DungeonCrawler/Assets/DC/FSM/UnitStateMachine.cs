@@ -4,7 +4,7 @@ using UnityEngine;
 namespace DC.FSM
 {
     [RequireComponent(typeof(Rigidbody2D))]
-    public class UnitStateMachine : FiniteStateMachine
+    public abstract class UnitStateMachine : FiniteStateMachine
     {
         public float slowingDistance = 0.5f;
         public float acceleration = 15;
