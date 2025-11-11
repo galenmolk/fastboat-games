@@ -60,7 +60,7 @@ namespace DC
             }
 
             // Move the transform based on the current velocity
-            rb.velocity = currentVelocity;
+            rb.linearVelocity = currentVelocity;
         }
 
         private void Attack()

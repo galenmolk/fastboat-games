@@ -10,7 +10,7 @@ namespace DC
         
         private void Update()
         {
-            var velocity = rb.velocity;
+            var velocity = rb.linearVelocity;
             if (velocity.magnitude > 0f)
             {
                 var angle = (float)Math.Atan2(velocity.y, velocity.x) * Mathf.Rad2Deg;

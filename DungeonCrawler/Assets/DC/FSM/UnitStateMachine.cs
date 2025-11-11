@@ -36,7 +36,7 @@ namespace DC.FSM
 
         public void SetVelocity(Vector2 velocity)
         {
-            rigidbody2D.velocity = velocity;
+            rigidbody2D.linearVelocity = velocity;
         }
 
         public Vector2 position => cachedTransform.position;

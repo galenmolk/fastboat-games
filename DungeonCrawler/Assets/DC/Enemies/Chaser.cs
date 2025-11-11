@@ -83,11 +83,11 @@ namespace DC.Enemies
                 var currentPosition = transform.position;
                 var direction = (nextNode - currentPosition).normalized;
                 currentVelocity = Vector2.MoveTowards(currentVelocity, direction * speed, acceleration * Time.deltaTime);
-                rb.velocity = currentVelocity;
+                rb.linearVelocity = currentVelocity;
 
                 if (Vector2.Distance(currentPosition, endNode) <= endStoppingDistance)
                 {
-                    rb.velocity = Vector2.zero;
+                    rb.linearVelocity = Vector2.zero;
                     isChasing = false;
                     return;
                 }

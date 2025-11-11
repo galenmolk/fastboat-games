@@ -71,7 +71,7 @@ namespace DC.Enemies
                 }
             }
         
-            rb.velocity = currentVelocity;
+            rb.linearVelocity = currentVelocity;
         }
 
         private void Progress()
