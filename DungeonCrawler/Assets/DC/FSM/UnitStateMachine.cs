@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace DC.FSM
@@ -6,6 +5,8 @@ namespace DC.FSM
     [RequireComponent(typeof(Rigidbody2D))]
     public abstract class UnitStateMachine : FiniteStateMachine
     {
+        public Vector2 position => cachedTransform.position;
+        
         public float slowingDistance = 0.5f;
         public float acceleration = 15;
         public float deceleration = 5;
@@ -38,7 +39,5 @@ namespace DC.FSM
         {
             rigidbody2D.linearVelocity = velocity;
         }
-
-        public Vector2 position => cachedTransform.position;
     }
 }

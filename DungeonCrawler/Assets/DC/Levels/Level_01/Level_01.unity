@@ -78351,10 +78351,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 860765288385262002, guid: c834fe290cb0b4e65ade26947acd4685, type: 3}
-      propertyPath: weapon
-      value: 
-      objectReference: {fileID: 11400000, guid: ff7d2590483af4ef2b315d1991baf2b9, type: 2}
     - target: {fileID: 2468004193004200391, guid: c834fe290cb0b4e65ade26947acd4685, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.06177482
@@ -78398,26 +78394,6 @@ PrefabInstance:
     - target: {fileID: 4645149804459326428, guid: c834fe290cb0b4e65ade26947acd4685, type: 3}
       propertyPath: m_Name
       value: Avatar
-      objectReference: {fileID: 0}
-    - target: {fileID: 7506552543176235984, guid: c834fe290cb0b4e65ade26947acd4685, type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7506552543176235984, guid: c834fe290cb0b4e65ade26947acd4685, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 632499309
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841657421049851110, guid: c834fe290cb0b4e65ade26947acd4685, type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841657421049851110, guid: c834fe290cb0b4e65ade26947acd4685, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 632499309
-      objectReference: {fileID: 0}
-    - target: {fileID: 8801114459796122191, guid: c834fe290cb0b4e65ade26947acd4685, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

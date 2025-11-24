@@ -76,8 +76,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 632499309
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
   m_Color: {r: 0.42352945, g: 0.9960785, b: 0.43529415, a: 1}
@@ -105,7 +105,8 @@ GameObject:
   - component: {fileID: 7825505010868952246}
   - component: {fileID: 6227682520104993329}
   - component: {fileID: 860765288385262002}
-  - component: {fileID: 872616551585956360}
+  - component: {fileID: 7973331200862134960}
+  - component: {fileID: 9188670682587652020}
   m_Layer: 0
   m_Name: Avatar
   m_TagString: Player
@@ -144,16 +145,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 359c2a97be1a94776991e314a37b8598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rect:
-    serializedVersion: 2
-    x: 10
-    y: 10
-    width: 400
-    height: 50
-  moveSpeed: 6.5
-  acceleration: 50
-  deceleration: 30
-  decelerationMagnitudeThreshold: 1.5
 --- !u!58 &5930647384420847367
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -258,8 +249,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponCollider: {fileID: 3681450373707470998}
-  weapon: {fileID: 11400000, guid: 26c06687812cb4604899845644d72187, type: 2}
---- !u!114 &872616551585956360
+  weapon: {fileID: 11400000, guid: ff7d2590483af4ef2b315d1991baf2b9, type: 2}
+--- !u!114 &7973331200862134960
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -268,12 +259,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 4645149804459326428}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a77e71ce75d43468a0ff1f2b77472ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 32d1aa8048874a8d9876371888420c14, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DC.AvatarAnimator
+  m_EditorClassIdentifier: Assembly-CSharp::DC.AvatarStateMachine
+  slowingDistance: 0.5
+  acceleration: 15
+  deceleration: 5
+  speed: 2.5
+  stoppingSpeedThreshold: 0.1
+  movementInput: {fileID: 9188670682587652020}
   animator: {fileID: 4981479393327759854}
+--- !u!114 &9188670682587652020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4645149804459326428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff9da44880804c66be595c95e5aa2b82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DC.MovementInput
   rb: {fileID: 5358140847107452968}
-  threshold: 0.01
+  decelerationMagnitudeThreshold: 1.5
+  moveSpeed: 6.5
+  acceleration: 50
+  deceleration: 30
 --- !u!1 &6521971142506884362
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,8 +509,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 632499309
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.41960788, g: 0.9921569, b: 0.43529415, a: 1}
